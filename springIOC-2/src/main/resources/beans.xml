@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="user" class="com.xue.pojo.User">
+    <!--        有参构造的方法， 下标赋值-->
+    <!--        <constructor-arg index="0" value="xue123"></constructor-arg>-->
+
+    <!--        这是第二种赋值方式， 根据参数类型， 但是多个一样参数的类型就不可以了， 比方说有两个string， 就不可以了-->
+    <!--        <constructor-arg type="java.lang.String" value="xuexue1234"></constructor-arg>-->
+
+    <!--        这是第三种方式，直接通过参数名称-->
+        <constructor-arg name="name" value="xueguodng12344"/>
+    </bean>
+    <!--    如果添加了别名，也可以用别名找到配置-->
+
+    <alias name="user" alias="user2"/>
+
+    <!--    import一般为团队开发，用别人的配置-->
+
+    <import resource="beans2.xml"/>
+    <import resource="beans3.xml"/>
+
+</beans>
